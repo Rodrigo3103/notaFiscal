@@ -1,0 +1,16 @@
+CREATE TABLE `classificacaofiscal` (
+	`idclassificacaoFiscal` INT(11) NOT NULL AUTO_INCREMENT,
+	`codigo` VARCHAR(8) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',
+	`descricao` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`iva` INT(11) NULL DEFAULT NULL,
+	`ipi` INT(11) NULL DEFAULT NULL,
+	`usuarioCadastro` INT(3) NOT NULL,
+	`auditoria` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`ativo` ENUM('S','N') NOT NULL COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`idclassificacaoFiscal`) USING BTREE
+)
+COMMENT='Tabela de Classificação Fiscal para o produto'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;

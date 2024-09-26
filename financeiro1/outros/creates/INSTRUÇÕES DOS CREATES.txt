@@ -1,0 +1,10 @@
+Para que os códigos CREATE das tabelas funcionem sem nenhum erro, por favor, 
+siga a ordem de execução abaixo:
+
+1º: Create tabela familiaproduto
+2º: Create tabela grupofamiliaproduto
+3º: Create tabela subgrupofamiliaproduto
+4º: Create tabela unidadeestoque
+5º: Create tabela produtos
+6º: Create tabela classificacaofiscal
+7º: Create tabela situacaotributaria

@@ -1,0 +1,26 @@
+### Converte imagem para python ###
+
+pyrcc5 'imagem'.qrc -o 'imagem'.py
+
+
+
+### Converte frame.ui para python ###
+
+pyuic5 'frame'.ui -o 'frame'.py -x
+
+
+### Converter em arquivo .exe ###
+
+pyinstaller --noconsole --onefile nome_do_sistema.py
+
+-noconsole tira o prompt de comando que fica em segundo plano
+--onefile cria um único arquivo executável, porém fica mais pesado
+
+
+
+### Sem prompt de comando atrás do executável
+https://stackoverflow.com/questions/24799155/python-how-can-i-hide-the-windows-command-prompt-screen-when-the-script-is-run
+
+import win32gui, win32con
+hide = win32gui.GetForegroundWindow()
+win32gui.ShowWindow(hide, win32con.SW_HIDE)

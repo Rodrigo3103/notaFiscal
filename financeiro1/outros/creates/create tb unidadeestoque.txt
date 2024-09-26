@@ -1,0 +1,14 @@
+CREATE TABLE `unidadeestoque` (
+	`idunidadeEstoque` INT(11) NOT NULL AUTO_INCREMENT,
+	`unidade` VARCHAR(3) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`descricao` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`usuarioCadastro` INT(3) NULL DEFAULT NULL,
+	`auditoria` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`ativo` ENUM('S','N') NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`idunidadeEstoque`) USING BTREE
+)
+COMMENT='Tabela ref. a unidade de compra/venda do produto'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;

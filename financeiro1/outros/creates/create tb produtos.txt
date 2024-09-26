@@ -1,0 +1,40 @@
+CREATE TABLE `produtos` (
+	`idproduto` INT(11) NOT NULL AUTO_INCREMENT,
+	`fk_familia` INT(11) NOT NULL,
+	`fk_grupo` INT(11) NOT NULL,
+	`fk_subGrupo` INT(11) NOT NULL,
+	`descricao` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',
+	`unidadeEstoque` VARCHAR(3) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',
+	`codigoBarras` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`referencia` INT(11) NULL DEFAULT NULL,
+	`aplicacao` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`localizacao` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`baixarEstoque` ENUM('Sim','Não') NOT NULL DEFAULT 'Não' COLLATE 'utf8_general_ci',
+	`complementoDescricao` VARCHAR(500) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`precoVenda` DECIMAL(20,2) NOT NULL DEFAULT '0.00',
+	`precoCusto` DECIMAL(20,2) NOT NULL DEFAULT '0.00',
+	`situacaoTributaria` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',
+	`classificacaoFiscal` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',
+	`IPI` DECIMAL(20,2) NULL DEFAULT '0.00',
+	`ICMS` DECIMAL(20,2) NULL DEFAULT '0.00',
+	`reducaoICMS` DECIMAL(20,2) NULL DEFAULT '0.00',
+	`porcentContrib` DECIMAL(20,2) NULL DEFAULT '0.00',
+	`porcentTotalContrib` DECIMAL(20,2) NULL DEFAULT '0.00',
+	`decretoNFE1` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`decretoNFE2` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`usuarioCadastro` INT(3) NOT NULL,
+	`auditoria` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`ativo` ENUM('S','N') NOT NULL COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`idproduto`) USING BTREE,
+	INDEX `fk_familia` (`fk_familia`) USING BTREE,
+	INDEX `fk_grupo` (`fk_grupo`) USING BTREE,
+	INDEX `fk_subGrupo` (`fk_subGrupo`) USING BTREE,
+	CONSTRAINT `fk_familia_produto` FOREIGN KEY (`fk_familia`) REFERENCES `familiaproduto` (`idfamilia`) ON UPDATE NO ACTION ON DELETE NO ACTION,
+	CONSTRAINT `fk_grupo_produto` FOREIGN KEY (`fk_grupo`) REFERENCES `grupofamiliaproduto` (`idgrupo`) ON UPDATE NO ACTION ON DELETE NO ACTION,
+	CONSTRAINT `fk_subGrupo_produto` FOREIGN KEY (`fk_subGrupo`) REFERENCES `subgrupofamiliaproduto` (`idsubGrupo`) ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+COMMENT='Tabela ref. ao produtos'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;

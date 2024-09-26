@@ -1,0 +1,19 @@
+
+        ["EMITENTES"]
+        CNPJ:   12523652000
+        Inscri.Estadual:123456789963
+        Razão Social:Rodrigo Interprise
+        Nome Fantasia:Rodrigo Connector
+        Telefone:11 96913-8043
+        CEP:4564
+        Logradouro/Rua:Travessa um para ter
+        Número:101
+        Complemento:casa 01
+        Bairro:Jardim da conquista
+        Cod. Cidade:033
+        Cidade:São Paulo
+        UF:SP
+        Regime Tributário:1 - Simples Nacional
+        
+        
+                    

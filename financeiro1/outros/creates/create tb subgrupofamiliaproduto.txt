@@ -1,0 +1,15 @@
+CREATE TABLE `subgrupofamiliaproduto` (
+	`idsubGrupo` INT(11) NOT NULL AUTO_INCREMENT,
+	`fk_grupoProduto` INT(11) NULL DEFAULT NULL,
+	`descricao` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`usuarioCadastro` INT(3) NOT NULL,
+	`auditoria` VARCHAR(50) NOT NULL COLLATE 'utf8_general_ci',
+	`ativo` ENUM('S','N') NOT NULL COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`idsubGrupo`) USING BTREE,
+	INDEX `fk_grupoProduto` (`fk_grupoProduto`) USING BTREE,
+	CONSTRAINT `fk_grupoProduto_idgrupoProduto` FOREIGN KEY (`fk_grupoProduto`) REFERENCES `grupofamiliaproduto` (`idgrupo`) ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1
+;
